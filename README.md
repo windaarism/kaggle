@@ -1,0 +1,2 @@
+# kaggle
+latihan untuk kaggle
