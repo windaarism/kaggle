@@ -22,4 +22,4 @@ library(ggplot2)
 library(caret)
 confusionMatrix(cek$labels,cek$Data.890.nrow.Data...1.)
 
-#hasil ketika faktor yang di pakai hanya sex, akurasi 76.79 %, namun ketika dimasukkan faktor age, sex,Pclass, Fare, SibSl akurasi berkurang menjadi38.76%
+#hasil ketika faktor yang di pakai hanya sex dan embarked (kategorik), akurasi 76.79 %, namun ketika dimasukkan faktor age, sex,Pclass, Fare, SibSl akurasi berkurang menjadi38.76%
