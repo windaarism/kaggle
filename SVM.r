@@ -3,8 +3,8 @@ library(caret)
 pathData = 'D:/kaggle/titanic'
 setwd(pathData)
 Data = read.csv('trainclean.csv')
-training_data <- Data[1:889,10:16]
-testing_data <- Data[890:nrow(Data),11:16]
+training_data <- Data[1:889,10:19]
+testing_data <- Data[890:nrow(Data),11:19]
 output_testing <- data.frame(Data[890:nrow(Data),10])
 #tuning gamma and cost
 svm_tune <- tune(svm, survive~.,data=training_data,kernel="radial", ranges=list(cost=10^(-1:2), gamma=c(.5,1,2)))
