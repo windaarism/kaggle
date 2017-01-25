@@ -9,17 +9,12 @@ data <- cbind(Data$Age,Data$Embarked,Data$Sex,Data$cla,Data$Farre,Data$Sibl)
 data <- cbind(Data$Embarked,Data$Sex)
 class<- as.factor(Data$Survived[1:889])
 output_testing <- data.frame(Data[890:nrow(Data),1])
-corpus <- Corpus(VectorSource(data))
-matrix <- DocumentTermMatrix(corpus)
-sparse <- as.compressed.matrix(matrix)
-model <- maxent(sparse[1:889,],class)
-model <- maxent(sparse[1:889,],as.factor(Data$Survived)[1:889])
-results <- predict(model,sparse[890:nrow(data),])
-View(results)
-cek<- cbind(results,output_testing)
+model <- maxent(data[1:889,],as.factor(Data$Survived)[1:889])
+results <- predict(model,data[890:nrow(data),])
 library(lattice)
 library(ggplot2)
 library(caret)
 confusionMatrix(cek$labels,cek$Data.890.nrow.Data...1.)
 
-#hasil ketika faktor yang di pakai hanya sex dan embarked (kategorik), akurasi 76.79 %, namun ketika dimasukkan faktor age, sex,Pclass, Fare, SibSl akurasi berkurang menjadi38.76%
+
+#namun ketika dimasukkan faktor age, sex,Pclass, Fare, SibSl akurasi berkurang menjadi 71.05%
