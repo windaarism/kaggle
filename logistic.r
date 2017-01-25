@@ -23,3 +23,4 @@ write.csv(predict,'test2.csv')
 View(predict)
 
 #akurasi 77.51 %
+#ketika cabin masuk malah jadi turun 76
