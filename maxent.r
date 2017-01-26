@@ -22,9 +22,9 @@ training<- as.matrix(dataa)
 output_testing <- data.frame(Data[890:nrow(Data),1])
 #Maxent
 model <- maxent(training[1:889,],as.factor(Data$Survived)[1:889])
-results <- predict(model,training[890:nrow(data),])
+results <- predict(model,training[890:nrow(training),])
 cek<- cbind(results,output_testing)
 
 #cek akurasi
 confusionMatrix(cek$labels,cek$Data.890.nrow.Data...1.)
-#hasil akurasi 77.51%
+#hasil akurasi 76.32%
